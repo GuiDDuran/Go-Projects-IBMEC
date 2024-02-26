@@ -21,7 +21,7 @@ func (c *Contato) alteraEmail(novoEmail string) {
 
 func adicionarContato(contato Contato, contatos *[5]Contato) {
 	for i := range contatos {
-		if contatos[i].Email == "" {
+		if contatos[i].Nome == "" && contatos[i].Email == "" {
 			contatos[i] = contato
 			return
 		}
@@ -32,7 +32,7 @@ func adicionarContato(contato Contato, contatos *[5]Contato) {
 
 func excluirContato(contatos *[5]Contato){
 	for i := len(*contatos) - 1; i >= 0; i-- {
-		if contatos[i].Email != "" {
+		if contatos[i].Nome != "" && contatos[i].Email != "" {
 			contatos[i] = Contato{}
 			return
 		}
